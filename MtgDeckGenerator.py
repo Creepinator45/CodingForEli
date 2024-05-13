@@ -8,37 +8,37 @@ class Card:
     def __init__(self, name:str):
         self.name = name
 
-Mountain = Card(name="Mountain")
-PlayWithFire = Card(name="PlayWithFire")
-LightUpTheStage = Card(name="LightUpTheStage")
+Mountain            = Card(name="Mountain")
+PlayWithFire        = Card(name="PlayWithFire")
+LightUpTheStage     = Card(name="LightUpTheStage")
 MonastarySwiftspear = Card(name="MonastarySwiftspear")
-GhituLavaRunner = Card(name="GhituLavaRunner")
-card4 = Card(name="card4")
-card5 = Card(name="card5")
-card6 = Card(name="card6")
-card7 = Card(name="card7")
-card8 = Card(name="card8")
-card9 = Card(name="card9")
-card10 = Card(name="card10")
-card11 = Card(name="card11")
-card12 = Card(name="card12")
-card13 = Card(name="card13")
-card14 = Card(name="card14")
-card15 = Card(name="card15")
+GhituLavaRunner     = Card(name="GhituLavaRunner")
+card4               = Card(name="card4")
+card5               = Card(name="card5")
+card6               = Card(name="card6")
+card7               = Card(name="card7")
+card8               = Card(name="card8")
+card9               = Card(name="card9")
+card10              = Card(name="card10")
+card11              = Card(name="card11")
+card12              = Card(name="card12")
+card13              = Card(name="card13")
+card14              = Card(name="card14")
+card15              = Card(name="card15")
 
 #list of creatures and noncreatures, in order of best to worst
 nonCreaturesInOrder = [PlayWithFire, LightUpTheStage, card4, card5, card6, card7, card8, card9]
-creaturesInOrder = [MonastarySwiftspear, GhituLavaRunner, card10, card11, card12, card13, card14, card15]
+creaturesInOrder    = [MonastarySwiftspear, GhituLavaRunner, card10, card11, card12, card13, card14, card15]
 
 #function you care about
 #giving function parameters type hints and default values is usually good practice, so that when you're calling your function you know what kind of value each parameter is expecting
 #This is a pure function, it takes input and gives output with no side affects. Making functions pure when possible is usually good practice
 def generateDeck(creatures: list[Card], nonCreatures: list[Card], land: Card, spellRatio: float = 2/3, creatureRatio: float = 0.5, deckSize: int = 60):
     #calculate number of creatures, noncreatures, and lands given a ratio of spells to lands and a ratio of creatures to non-creatures
-    numSpell = math.floor(deckSize * spellRatio)
-    numCreature = math.floor(numSpell * creatureRatio)
+    numSpell       = math.floor(deckSize * spellRatio)
+    numCreature    = math.floor(numSpell * creatureRatio)
     numNonCreature = numSpell - numCreature
-    numLand = deckSize-numSpell
+    numLand        = deckSize - numSpell
 
     #preprocesses creature and noncreature lists so they contain 4 copies of each card. This makes the rest of the function cleaner
     creatureList = []
